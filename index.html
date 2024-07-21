@@ -4,15 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Салон красоты Raspberry</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"> <!-- Стили Flatpickr -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Шрифты -->
+    <link rel="stylesheet" href="styles.css"> <!-- Ваши стили -->
 </head>
-    <body>
-    <!-- Ваш HTML код -->
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script src="script.js"></script>
-</body>
 <body>
     <header>
         <div class="container">
@@ -42,48 +37,46 @@
             </div>
             <div class="service">
                 <h3>Ламинирование ресниц</h3>
-                <p>Предаем нужную форму и длинну ресничкам.</p>
+                <p>Предаем нужную форму и длину ресничкам.</p>
                 <p>Цена: 30 Euro.</p>
             </div>
             <!-- Добавьте больше услуг по необходимости -->
         </div>
     </section>
-<section id="masters">
-    <div class="container">
-        <h2>Наши мастера</h2>
-        <div class="master">
-            <img src="master1.jpg" alt="Мастер Катерина Малинина">
-            <h3>Катерина Малинина</h3>
-            <p>Опыт работы: 4 года. Специализация: стрижки и маникюр.</p>
-        </div>
-    </div>
-</section>
+    <section id="masters">
+        <div class="container">
+            <h2>Наши мастера</h2>
+            <div class="master">
+                <img src="master1.jpg" alt="Мастер Катерина Малинина">
+                <h3>Катерина Малинина</h3>
+                <p>Опыт работы: 4 года. Специализация: стрижки и маникюр.</p>
+            </div>
             <!-- Добавьте больше мастеров по необходимости -->
         </div>
     </section>
-  <section id="appointment">
-    <div class="container">
-        <h2>Запись на прием</h2>
-        <form id="appointment-form">
-            <label for="service">Выберите услугу:</label>
-            <select id="service" name="service">
-                <option value="haircut">Бровки</option>
-                <option value="manicure">Ресницы</option>
-                <!-- Добавьте больше услуг по необходимости -->
-            </select>
-            <label for="master">Выберите мастера:</label>
-            <select id="master" name="master">
-                <option value="katerina">Катерина Малинина</option>
-            </select>
-            <label for="date">Выберите дату:</label>
-            <input type="date" id="date" name="date">
-            <label for="time">Выберите время:</label>
-            <input type="time" id="time" name="time">
-            <button type="submit">Записаться</button>
-        </form>
-    </div>
-</section>
- <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script> <!-- Скрипт Flatpickr -->
+    <section id="appointment">
+        <div class="container">
+            <h2>Запись на прием</h2>
+            <form id="appointment-form">
+                <label for="service">Выберите услугу:</label>
+                <select id="service" name="service">
+                    <option value="haircut">Бровки</option>
+                    <option value="manicure">Ресницы</option>
+                    <!-- Добавьте больше услуг по необходимости -->
+                </select>
+                <label for="master">Выберите мастера:</label>
+                <select id="master" name="master">
+                    <option value="katerina">Катерина Малинина</option>
+                </select>
+                <label for="date">Выберите дату:</label>
+                <input type="date" id="date" name="date">
+                <label for="time">Выберите время:</label>
+                <input type="time" id="time" name="time">
+                <button type="submit">Записаться</button>
+            </form>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script> <!-- Скрипт Flatpickr -->
     <script src="script.js"></script> <!-- Ваш собственный скрипт -->
 </body>
 </html>
