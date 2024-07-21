@@ -76,6 +76,33 @@ header nav ul li a:hover {
     color: #555;
 }
 
+/* Стили для навигации в секции hero */
+#hero-nav {
+    margin-top: 20px; /* Отступ между текстом и навигацией */
+}
+
+#hero-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Центрирование списка меню */
+}
+
+#hero-nav ul li {
+    margin: 0 15px; /* Увеличен отступ между элементами меню */
+}
+
+#hero-nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px; /* Размер шрифта ссылок */
+}
+
+#hero-nav ul li a:hover {
+    text-decoration: underline; /* Подчеркивание при наведении */
+}
+
 /* Стили для секций */
 section {
     padding: 40px 0;
