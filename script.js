@@ -9,8 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function updateAvailableTimes(selectedDate) {
-        const timeInput = document.getElementById('time');
-        timeInput.value = ''; // Очистка поля времени при изменении даты
+        const timeSelect = document.getElementById('time');
+        timeSelect.innerHTML = ''; // Очистка списка времени при изменении даты
 
         const date = new Date(selectedDate);
         const dayOfCycle = ((Math.floor((date - new Date(date.getFullYear(), 0, 1)) / (1000 * 60 * 60 * 24)) + 1) % 6);
@@ -23,27 +23,15 @@ document.addEventListener('DOMContentLoaded', function() {
             availableTimes = ["09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00"];
         }
 
-        // Обновляем Flatpickr для выбора времени
-        flatpickr("#time", {
-            enableTime: true,
-            noCalendar: true,
-            dateFormat: "H:i",
-            time_24hr: true,
-            enable: availableTimes.map(time => {
-                return {
-                    from: time,
-                    to: addOneHour(time)
-                };
-            })
+        // Заполнение поля выбора времени доступными интервалами
+        availableTimes.forEach(function(time) {
+            const option = document.createElement('option');
+            option.value = time;
+            option.textContent = time;
+            timeSelect.appendChild(option);
         });
 
-        timeInput.removeAttribute('disabled'); // Разблокировать поле времени
-    }
-
-    function addOneHour(time) {
-        const [hours, minutes] = time.split(":").map(Number);
-        const newHours = (hours + 1) % 24;
-        return `${newHours < 10 ? '0' + newHours : newHours}:${minutes < 10 ? '0' + minutes : minutes}`;
+        timeSelect.removeAttribute('disabled'); // Разблокировать поле времени
     }
 
     // Обработка отправки формы
