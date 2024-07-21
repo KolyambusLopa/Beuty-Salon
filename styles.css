@@ -1,82 +1,11 @@
-body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
-
-header {
-    background-color: #333;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-}
-.container {
-    width: 80%;
-    margin: 0 auto;
-}
-
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-#hero {
-    background: url('hero.jpg') no-repeat center center/cover;
-    height: 400px;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-#hero h1 {
-    font-size: 48px;
-}
-
-section {
-    padding: 60px 0;
-    background-color: white;
-}
-
-h2 {
-    color: #333;
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.service, .master {
-    margin: 20px 0;
-    text-align: center;
-}
-
-.master img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-}
-
+/* Основные стили для формы */
 form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
 }
 
 form label {
@@ -88,8 +17,8 @@ form select, form input {
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 300px;
-    /* Убедитесь, что поля не перекрываются другими элементами */
+    width: 100%;
+    max-width: 300px;
 }
 
 form button {
@@ -104,4 +33,9 @@ form button {
 
 form button:hover {
     background-color: #555;
+}
+
+/* Стили для Flatpickr */
+.flatpickr-calendar {
+    z-index: 9999; /* Обеспечивает, чтобы календарь отображался поверх других элементов */
 }
