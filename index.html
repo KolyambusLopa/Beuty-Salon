@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Салон красоты Raspberry</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Подключение стилей -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"> <!-- Стили Flatpickr -->
+    <link rel="stylesheet" href="styles.css"> <!-- Обновленный файл стилей -->
 </head>
 <body>
     <header>
@@ -40,6 +40,7 @@
                 <p>Предаем нужную форму и длину ресничкам.</p>
                 <p>Цена: 30 Euro.</p>
             </div>
+            <!-- Добавьте больше услуг по необходимости -->
         </div>
     </section>
     <section id="masters">
@@ -60,15 +61,16 @@
                 <select id="service" name="service">
                     <option value="haircut">Бровки</option>
                     <option value="manicure">Ресницы</option>
+                    <!-- Добавьте больше услуг по необходимости -->
                 </select>
                 <label for="master">Выберите мастера:</label>
                 <select id="master" name="master">
                     <option value="katerina">Катерина Малинина</option>
                 </select>
                 <label for="date">Выберите дату:</label>
-                <input type="text" id="date" name="date" placeholder="Выберите дату">
+                <input type="text" id="date" name="date">
                 <label for="time">Выберите время:</label>
-                <input type="text" id="time" name="time" placeholder="Выберите время">
+                <input type="text" id="time" name="time">
                 <button type="submit">Записаться</button>
             </form>
         </div>
