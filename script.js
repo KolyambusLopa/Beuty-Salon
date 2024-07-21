@@ -9,18 +9,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function updateAvailableTimes(selectedDate) {
-        const timePicker = flatpickr("#time", {
-            enableTime: true, // Включаем выбор времени
-            noCalendar: true, // Без календаря
-            dateFormat: "H:i", // Формат времени
-            time_24hr: true, // Формат времени 24 часа
-            minDate: selectedDate, // Минимальная доступная дата (выбранная дата)
-            minTime: "09:00", // Минимальное доступное время
-            maxTime: "20:00" // Максимальное доступное время
-        });
+        const timeInput = document.getElementById('time');
+        timeInput.value = ''; // Очистка поля времени при изменении даты
 
         const date = new Date(selectedDate);
-        const dayOfCycle = (Math.floor((date - new Date(date.getFullYear(), 0, 1)) / (1000 * 60 * 60 * 24)) + 1) % 6; // Определяем день цикла
+        const dayOfCycle = ((Math.floor((date - new Date(date.getFullYear(), 0, 1)) / (1000 * 60 * 60 * 24)) + 1) % 6);
 
         // Определяем доступные временные интервалы
         let availableTimes = [];
@@ -30,16 +23,21 @@ document.addEventListener('DOMContentLoaded', function() {
             availableTimes = ["09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00"];
         }
 
-        // Очищаем предыдущие значения
-        timePicker.clear();
+        // Обновляем Flatpickr для выбора времени
+        const timePicker = flatpickr("#time", {
+            enableTime: true,
+            noCalendar: true,
+            dateFormat: "H:i",
+            time_24hr: true,
+            enable: availableTimes.map(time => {
+                return {
+                    from: time,
+                    to: addOneHour(time)
+                };
+            })
+        });
 
-        // Устанавливаем доступные временные интервалы
-        timePicker.set("enable", availableTimes.map(time => {
-            return {
-                from: time,
-                to: addOneHour(time)
-            };
-        }));
+        timeInput.removeAttribute('disabled'); // Разблокировать поле времени
     }
 
     function addOneHour(time) {
@@ -62,4 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Пожалуйста, заполните все поля.');
         }
     });
+
+    // Изначально блокируем поле времени
+    document.getElementById('time').setAttribute('disabled', 'disabled');
 });
