@@ -11,6 +11,10 @@ header {
     padding: 20px 0;
     text-align: center;
 }
+/* Опционально: настроить стили для Flatpickr */
+.flatpickr-calendar {
+    z-index: 9999; /* Убедитесь, что календарь отображается поверх других элементов */
+}
 
 .container {
     width: 80%;
