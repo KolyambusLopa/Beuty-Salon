@@ -12,6 +12,3 @@ document.getElementById('appointment-form').addEventListener('submit', function(
         alert('Пожалуйста, заполните все поля.');
     }
 });
-document.getElementById('date').addEventListener('focus', function() {
-    this.click();
-});
