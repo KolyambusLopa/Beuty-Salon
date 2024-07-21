@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Подключаем Flatpickr к полю выбора даты
     flatpickr("#date", {
         dateFormat: "Y-m-d", // Формат даты
-        minDate: "today", // Ограничение: не ранее сегодняшнего дня,
+        minDate: "today", // Ограничение: не ранее сегодняшнего дня
         onChange: function(selectedDates, dateStr, instance) {
             updateAvailableTimes(dateStr);
         }
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // Обновляем Flatpickr для выбора времени
-        const timePicker = flatpickr("#time", {
+        flatpickr("#time", {
             enableTime: true,
             noCalendar: true,
             dateFormat: "H:i",
@@ -42,7 +42,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function addOneHour(time) {
         const [hours, minutes] = time.split(":").map(Number);
-        return `${hours + 1}:${minutes < 10 ? '0' + minutes : minutes}`;
+        const newHours = (hours + 1) % 24;
+        return `${newHours < 10 ? '0' + newHours : newHours}:${minutes < 10 ? '0' + minutes : minutes}`;
     }
 
     // Обработка отправки формы
