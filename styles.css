@@ -1,4 +1,94 @@
-/* Основные стили для формы */
+/* Основные стили для всего сайта */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Стили для шапки */
+header {
+    background: #333;
+    color: white;
+    padding: 10px 0;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Стили для секции hero */
+#hero {
+    background: #f4f4f4;
+    padding: 40px 0;
+    text-align: center;
+}
+
+#hero h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+#hero p {
+    font-size: 18px;
+    color: #555;
+}
+
+/* Стили для секций */
+section {
+    padding: 40px 0;
+}
+
+h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.service, .master {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.service h3, .master h3 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.service p, .master p {
+    color: #555;
+}
+
+.master img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* Стили для формы */
 form {
     display: flex;
     flex-direction: column;
@@ -6,10 +96,14 @@ form {
     max-width: 500px;
     margin: auto;
     padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 form label {
     margin: 10px 0 5px;
+    font-weight: 700;
 }
 
 form select, form input {
@@ -38,4 +132,16 @@ form button:hover {
 /* Стили для Flatpickr */
 .flatpickr-calendar {
     z-index: 9999; /* Обеспечивает, чтобы календарь отображался поверх других элементов */
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    header nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    header .logo {
+        text-align: center;
+    }
 }
