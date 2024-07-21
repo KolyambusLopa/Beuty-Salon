@@ -18,7 +18,13 @@ header {
     background: #333;
     color: white;
     padding: 10px 0;
-    text-align: center; /* Центрирование всего содержимого */
+    text-align: center; /* Центрирование содержимого */
+}
+
+header .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрирование содержимого контейнера */
 }
 
 header .logo {
@@ -35,10 +41,11 @@ header nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    justify-content: center; /* Центрирование списка меню */
 }
 
 header nav ul li {
-    display: inline;
     margin: 0 15px; /* Увеличен отступ между элементами меню */
 }
 
