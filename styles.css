@@ -6,6 +6,7 @@ body {
     box-sizing: border-box;
 }
 
+/* Стили для контейнера */
 .container {
     width: 90%;
     max-width: 1200px;
@@ -17,26 +18,38 @@ header {
     background: #333;
     color: white;
     padding: 10px 0;
+    text-align: center; /* Центрирование всего содержимого */
 }
 
 header .logo {
     font-size: 24px;
     font-weight: 700;
+    margin: 0;
+}
+
+header nav {
+    margin-top: 10px; /* Отступ от логотипа */
 }
 
 header nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 header nav ul li {
     display: inline;
-    margin: 0 10px;
+    margin: 0 15px; /* Увеличен отступ между элементами меню */
 }
 
 header nav ul li a {
     color: white;
     text-decoration: none;
+    font-size: 18px; /* Размер шрифта ссылок */
+}
+
+header nav ul li a:hover {
+    text-decoration: underline; /* Подчеркивание при наведении */
 }
 
 /* Стили для секции hero */
