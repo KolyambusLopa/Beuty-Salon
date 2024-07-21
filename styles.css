@@ -90,6 +90,7 @@ form select, form input {
     border: 1px solid #ccc;
     border-radius: 5px;
     width: 300px;
+    /* Убедитесь, что поля не перекрываются другими элементами */
 }
 
 form button {
