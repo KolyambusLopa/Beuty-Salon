@@ -1,3 +1,16 @@
+// Инициализация Flatpickr для поля даты
+flatpickr("#date", {
+    dateFormat: "Y-m-d", // Формат даты
+    minDate: "today" // Минимальная дата, которую можно выбрать (сегодня)
+});
+
+// Инициализация Flatpickr для поля времени
+flatpickr("#time", {
+    enableTime: true,
+    noCalendar: true,
+    dateFormat: "H:i",
+    time_24hr: true // Формат времени 24 часа
+});
 document.getElementById('appointment-form').addEventListener('submit', function(e) {
     e.preventDefault();
     const service = document.getElementById('service').value;
