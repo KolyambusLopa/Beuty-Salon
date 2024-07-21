@@ -196,6 +196,7 @@ form button:hover {
     #hero-nav ul li {
         margin: 10px 0;
     }
+    }
     /* Выравнивание размеров списков */
 form select, form input[type="text"] {
     width: 100%; /* Устанавливаем ширину 100% для всех select и input[type="text"] */
@@ -211,6 +212,6 @@ form select, form input[type="text"] {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-}
+
 
 
